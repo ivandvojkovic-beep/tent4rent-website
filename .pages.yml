@@ -1,0 +1,76 @@
+media:
+  input: assets
+  output: /assets
+content:
+  - name: postavke
+    label: Tent4rent - sadržaj stranice
+    type: file
+    path: data/site.json
+    format: json
+    fields:
+      - name: hero_title
+        label: "Glavni naslov"
+        type: string
+      - name: hero_description
+        label: "Opis na naslovnici"
+        type: text
+      - name: offer_heading
+        label: "Naslov ponude"
+        type: string
+      - name: offer_intro
+        label: "Uvodni tekst ponude"
+        type: text
+      - name: item_1_title
+        label: "Oprema 1 - naziv"
+        type: string
+      - name: item_1_description
+        label: "Oprema 1 - opis"
+        type: text
+      - name: item_2_title
+        label: "Oprema 2 - naziv"
+        type: string
+      - name: item_2_description
+        label: "Oprema 2 - opis"
+        type: text
+      - name: item_3_title
+        label: "Oprema 3 - naziv"
+        type: string
+      - name: item_3_description
+        label: "Oprema 3 - opis"
+        type: text
+      - name: item_4_title
+        label: "Oprema 4 - naziv"
+        type: string
+      - name: item_4_description
+        label: "Oprema 4 - opis"
+        type: text
+      - name: about_intro
+        label: "O nama - uvod"
+        type: text
+      - name: about_details
+        label: "O nama - detalji"
+        type: text
+      - name: cta_title
+        label: "Naslov poziva na upit"
+        type: string
+      - name: cta_description
+        label: "Opis poziva na upit"
+        type: text
+      - name: contact_email
+        label: "Kontakt e-mail (aktivira obrazac)"
+        type: string
+      - name: contact_phone
+        label: "Telefon / WhatsApp"
+        type: string
+      - name: service_area
+        label: "Područje najma"
+        type: string
+      - name: gallery_1
+        label: "Fotografija galerije 1"
+        type: image
+      - name: gallery_2
+        label: "Fotografija galerije 2"
+        type: image
+      - name: gallery_3
+        label: "Fotografija galerije 3"
+        type: image
