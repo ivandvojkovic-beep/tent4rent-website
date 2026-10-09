@@ -1,0 +1,16 @@
+TENT4RENT – UPUTE ZA CLOUDFLARE PAGES
+
+1. U ZIP datoteci se nalazi index.html, styles.css, script.js i favicon.svg.
+2. Na Cloudflare Pages zaslonu 'Upload your project assets' prenesite cijelu ZIP datoteku ili raspakiranu mapu (ovisno o ponuđenoj opciji).
+3. Kliknite 'Deploy site' i pričekajte potvrdu.
+4. Otvorite https://tent4rent.pages.dev
+
+VAŽNO PRIJE KORIŠTENJA:
+- Obrazac za kontakt je DEMO. U script.js zamijenite KONTAKT_EMAIL pravom e-mail adresom. Zatim ponovo učitajte promijenjene datoteke na Cloudflare.
+- Obrazac koristi mailto: (otvara e-mail program posjetitelja), a ne šalje samostalno poruke.
+- Galerija sadrži privremene ilustracije, ne stvarne fotografije najamne opreme.
+- U tekstu o nama unesite svoje podatke, područje dostupnosti, pravila najma i ostale informacije kada budu poznate.
+- Budući da obrt nije aktivan, provjerite zakonske uvjete za oglašavanje/uslugu najma prije korištenja stranice u poslovne svrhe.
+- Besplatni hosting ne uključuje vlastitu domenu.
+
+Datoteke su statične i ne traže build korak, bazu podataka ili plaćeni hosting.
