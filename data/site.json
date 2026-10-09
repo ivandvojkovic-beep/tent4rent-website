@@ -17,5 +17,8 @@
   "cta_description": "Kontaktirajte nas za informacije o dostupnosti opreme i uvjetima najma.",
   "contact_email": "ivandvojkovic@gmail.com",
   "contact_phone": "+385 99 242 3650",
-  "service_area": "Zagrbačka županija"
+  "service_area": "Zagrbačka županija",
+  "gallery_1": "/assets/1.jpg",
+  "gallery_2": "/assets/18.jpg",
+  "gallery_3": "/assets/IMG_20230906_160705.jpg"
 }
