@@ -52,7 +52,7 @@ document.getElementById('inquiry-form').addEventListener('submit', (event) => {
       const url=data['gallery_'+i];
       if(typeof url!=='string'||!url.trim()) continue;
       // Prihvati samo lokalne putanje iz Pages CMS galerije.
-      if(!/^\/assets\/[a-zA-Z0-9_./%-]+$/.test(url)) continue;
+      if(!/^\/assets\/[^?#]+$/u.test(url)) continue;
       const card=document.querySelector('[data-gallery="'+i+'"]');
       if(card){card.style.backgroundImage='url("'+url+'")';card.classList.add('has-photo');}
     }
