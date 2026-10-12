@@ -370,3 +370,46 @@
     text-align: center;
   }
 }
+
+/* TENT4RENT - popravak naslovnice za mobitele */
+
+@media (max-width: 768px) {
+
+  .hero .hero-grid {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 22px !important;
+    box-sizing: border-box !important;
+  }
+
+  .hero .hero-copy {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 20px 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .hero .hero-copy h1 {
+    font-size: clamp(30px, 8vw, 40px) !important;
+    line-height: 1.15 !important;
+    letter-spacing: -0.02em;
+    max-width: 100% !important;
+    overflow-wrap: normal;
+  }
+
+  .hero .hero-copy p {
+    font-size: 15px !important;
+    line-height: 1.55 !important;
+    max-width: 100% !important;
+  }
+
+  /* Uklanja dvije kvacice ispod gumba */
+  .hero .hero-features,
+  .hero .hero-points,
+  .hero .hero-checks {
+    display: none !important;
+  }
+}
