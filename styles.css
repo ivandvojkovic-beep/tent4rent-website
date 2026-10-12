@@ -413,3 +413,9 @@
     display: none !important;
   }
 }
+
+/* Tent4rent - uklanjanje kvacica ispod gumba */
+
+.hero .hero-foot {
+  display: none !important;
+}
