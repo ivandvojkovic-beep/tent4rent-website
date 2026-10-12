@@ -335,3 +335,38 @@
   text-align: center;
   text-decoration: none;
 }
+
+/* Catering Muring - sredina footera */
+
+@media (min-width: 769px) {
+  .footer {
+    position: relative;
+  }
+
+  .footer .hero-catering {
+    position: absolute !important;
+    left: 50% !important;
+    top: 65px !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: translateX(-50%);
+    margin: 0 !important;
+    width: 150px !important;
+    max-width: 150px !important;
+    padding: 7px 10px !important;
+    box-sizing: border-box;
+    z-index: 5;
+  }
+
+  .footer .hero-catering img {
+    width: 100% !important;
+    max-width: 130px !important;
+    height: auto;
+  }
+
+  .footer .hero-catering a {
+    font-size: 12px !important;
+    white-space: nowrap;
+    text-align: center;
+  }
+}
