@@ -419,3 +419,63 @@
 .hero .hero-foot {
   display: none !important;
 }
+
+/* Tent4rent - klikabilne dimenzije satora */
+
+.tent-size-button {
+  background: white;
+  color: #102438;
+  border: 1px solid #d5dfe7;
+  padding: 12px 16px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.tent-size-button:hover,
+.tent-size-button:focus-visible {
+  background: #dcecfb;
+  border-color: #478dd1;
+}
+
+.tent-sketch-dialog {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  width: min(92vw, 850px);
+  max-height: 90vh;
+  overflow: auto;
+  padding: 20px;
+  border: 0;
+  border-radius: 14px;
+  background: white;
+  color: #102438;
+  box-shadow: 0 20px 65px #0005;
+}
+
+.tent-sketch-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.tent-sketch-dialog h3 {
+  margin: 0 45px 16px 0;
+  font-size: 22px;
+}
+
+.tent-sketch-dialog img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 70vh;
+  object-fit: contain;
+}
+
+.tent-sketch-close {
+  position: absolute;
+  right: 14px;
+  top: 10px;
+  border: 0;
+  background: transparent;
+  font-size: 34px;
+  cursor: pointer;
+}
