@@ -479,3 +479,55 @@
   font-size: 34px;
   cursor: pointer;
 }
+
+/* TENT4RENT - fotografija u ponudi satora */
+
+#ponuda .item.feature {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(8, 24, 39, 0.12) 0%,
+      rgba(8, 24, 39, 0.28) 45%,
+      rgba(8, 24, 39, 0.88) 100%
+    ),
+    url("/assets/IMG_20240913_193508.jpg")
+      center center / cover no-repeat;
+  color: #ffffff;
+}
+
+/* Uklanjamo staru ilustraciju */
+#ponuda .item.feature .tent-symbol svg {
+  display: none;
+}
+
+/* Bijeli naslov i opis */
+#ponuda .item.feature h3,
+#ponuda .item.feature p,
+#ponuda .item.feature .item-number,
+#ponuda .item.feature .item-arrow {
+  color: #ffffff;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+}
+
+/* Bijeli kvadratici ostaju klikabilni */
+#ponuda .item.feature .tent-size-button {
+  background: rgba(255,255,255,0.96);
+  color: #102438;
+}
+
+/* Poveznica za upit */
+#ponuda .item.feature .item-link {
+  color: #ffffff;
+  border-top-color: rgba(255,255,255,0.4);
+}
+
+/* Prilagodba mobitelima */
+@media (max-width: 768px) {
+  #ponuda .item.feature {
+    min-height: 650px;
+    background-position: 56% center;
+  }
+}
