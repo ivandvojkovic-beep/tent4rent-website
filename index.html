@@ -41,4 +41,15 @@
 >
 WhatsApp
 </a>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const catering = document.querySelector('.hero-catering');
+  const footer = document.querySelector('.footer');
+
+  if (catering && footer) {
+    footer.appendChild(catering);
+  }
+});
+</script>
 </body></html>
