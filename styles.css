@@ -146,3 +146,77 @@
 .hero .hero-checks {
   display: none !important;
 }
+
+/* TENT4RENT - popravak polozaja cateringa */
+
+.hero {
+  position: relative;
+}
+
+.hero .hero-grid {
+  display: block;
+  width: 100%;
+}
+
+.hero .hero-copy {
+  width: 100%;
+  max-width: 720px;
+}
+
+/* Mali logo u donjem lijevom kutu */
+.hero .hero-catering {
+  position: absolute !important;
+  left: 20px !important;
+  right: auto !important;
+  bottom: 18px !important;
+  top: auto !important;
+  z-index: 10;
+  width: 190px !important;
+  max-width: calc(100% - 40px);
+  padding: 9px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  background: rgba(255,255,255,0.94);
+  border-radius: 10px;
+  box-shadow: 0 5px 18px rgba(0,0,0,0.2);
+}
+
+.hero .hero-catering img {
+  display: block;
+  width: 100%;
+  max-width: 165px !important;
+  height: auto;
+  object-fit: contain;
+}
+
+.hero .hero-catering a {
+  color: #172435;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* Prilagodba za mobitele */
+@media (max-width: 768px) {
+  .hero {
+    padding-bottom: 130px;
+  }
+
+  .hero .hero-catering {
+    left: 12px !important;
+    bottom: 12px !important;
+    width: 155px !important;
+    padding: 8px 10px;
+  }
+
+  .hero .hero-catering img {
+    max-width: 130px !important;
+  }
+
+  .hero .hero-catering a {
+    font-size: 12px;
+  }
+}
