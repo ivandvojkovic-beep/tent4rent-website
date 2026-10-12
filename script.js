@@ -236,3 +236,57 @@ async function pokreniSlideshow() {
 
 ucitajSadrzaj();
 pokreniSlideshow();
+
+/* Tent4rent - skice satora po dimenzijama */
+(() => {
+  const paths = [
+    '/assets/assetssator-4x4.jpg',
+    '/assets/assetssator-5X5.jpg',
+    '/assets/assetssator-4X8.jpg',
+    '/assets/assetssator-5X8.jpg'
+  ];
+
+  const sizes = document.querySelectorAll(
+    '#ponuda .sizes span'
+  );
+
+  if (!sizes.length) return;
+
+  const dialog = document.createElement('dialog');
+  dialog.className = 'tent-sketch-dialog';
+
+  const close = document.createElement('button');
+  close.type = 'button';
+  close.className = 'tent-sketch-close';
+  close.textContent = '×';
+  close.setAttribute('aria-label', 'Zatvori skicu');
+
+  const title = document.createElement('h3');
+  const img = document.createElement('img');
+  img.alt = 'Skica šatora';
+
+  dialog.append(close, title, img);
+  document.body.appendChild(dialog);
+
+  close.addEventListener('click', () => dialog.close());
+
+  dialog.addEventListener('click', event => {
+    if (event.target === dialog) dialog.close();
+  });
+
+  sizes.forEach((size, index) => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'tent-size-button';
+    button.textContent = size.textContent;
+
+    size.replaceWith(button);
+
+    button.addEventListener('click', () => {
+      title.textContent = 'Šator ' + button.textContent;
+      img.src = paths[index];
+      img.alt = title.textContent + ' - skica i kapacitet';
+      dialog.showModal();
+    });
+  });
+})();
