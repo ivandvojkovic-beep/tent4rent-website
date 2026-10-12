@@ -132,3 +132,17 @@
     max-width: 100%;
   }
 }
+
+/* TENT4RENT - cista naslovnica */
+
+/* Uklanja natpis i plavu tockicu iznad naslova */
+.hero .eyebrow {
+  display: none !important;
+}
+
+/* Uklanja dvije kvacice i tekstove ispod gumba */
+.hero .hero-features,
+.hero .hero-points,
+.hero .hero-checks {
+  display: none !important;
+}
