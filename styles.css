@@ -657,3 +657,39 @@
   color: #ffffff;
   border-top-color: rgba(255,255,255,0.4);
 }
+
+/* TENT4RENT - BARSKI STOLOVI */
+
+#ponuda .item-barski-bg {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(8, 24, 39, 0.04) 0%,
+      rgba(8, 24, 39, 0.12) 45%,
+      rgba(8, 24, 39, 0.82) 100%
+    ),
+    url("/assets/barski-stolovi.jpg")
+    center center / cover no-repeat;
+
+  color: #ffffff;
+}
+
+/* Sakrij staru plavu ikonu */
+#ponuda .item-barski-bg .product-icon {
+  visibility: hidden;
+}
+
+/* Bijeli tekst */
+#ponuda .item-barski-bg h3,
+#ponuda .item-barski-bg p,
+#ponuda .item-barski-bg .item-number,
+#ponuda .item-barski-bg .item-arrow {
+  color: #ffffff;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+}
+
+/* Bijela poveznica */
+#ponuda .item-barski-bg .item-link {
+  color: #ffffff;
+  border-top-color: rgba(255,255,255,0.4);
+}
