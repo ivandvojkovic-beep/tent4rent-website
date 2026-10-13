@@ -632,7 +632,7 @@
       rgba(8, 24, 39, 0.10) 40%,
       rgba(8, 24, 39, 0.82) 100%
     ),
-    url("/assets/pivske-garniture.png")
+    url("/assets/pivske-garniture.png.png")
     center center / cover no-repeat;
 
   color: #ffffff;
