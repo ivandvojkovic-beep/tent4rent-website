@@ -600,3 +600,24 @@
   color: #ffffff;
   border-top-color: rgba(255,255,255,0.45);
 }
+
+/* FRIŽIDERI - svjetlija pozadina */
+
+#ponuda .offer-grid > .item:nth-child(2) {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(8, 24, 39, 0.02) 0%,
+      rgba(8, 24, 39, 0.06) 45%,
+      rgba(8, 24, 39, 0.72) 100%
+    ),
+    url("/assets/Coca-Cola rashladna vitrina ispred skladišta.png")
+    center center / cover no-repeat;
+}
+
+/* Sakrij staru ilustraciju hladnjaka */
+#ponuda .offer-grid > .item:nth-child(2) .item-visual,
+#ponuda .offer-grid > .item:nth-child(2) .product-icon,
+#ponuda .offer-grid > .item:nth-child(2) .item-icon {
+  visibility: hidden;
+}
