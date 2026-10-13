@@ -621,3 +621,39 @@
 #ponuda .offer-grid > .item:nth-child(2) .item-icon {
   visibility: hidden;
 }
+
+/* TENT4RENT - PIVSKE GARNITURE */
+
+#ponuda .item-pivske-bg {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(8, 24, 39, 0.02) 0%,
+      rgba(8, 24, 39, 0.10) 40%,
+      rgba(8, 24, 39, 0.82) 100%
+    ),
+    url("/assets/pivske-garniture.jpg")
+    center center / cover no-repeat;
+
+  color: #ffffff;
+}
+
+/* Sakrij staru plavu ikonu */
+#ponuda .item-pivske-bg .product-icon {
+  visibility: hidden;
+}
+
+/* Bijeli naslov i opis */
+#ponuda .item-pivske-bg h3,
+#ponuda .item-pivske-bg p,
+#ponuda .item-pivske-bg .item-number,
+#ponuda .item-pivske-bg .item-arrow {
+  color: #ffffff;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+}
+
+/* Bijela poveznica za dostupnost */
+#ponuda .item-pivske-bg .item-link {
+  color: #ffffff;
+  border-top-color: rgba(255,255,255,0.4);
+}
