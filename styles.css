@@ -693,3 +693,128 @@
   color: #ffffff;
   border-top-color: rgba(255,255,255,0.4);
 }
+
+/* TENT4RENT - VELIKI PRIKAZ GALERIJE */
+
+#galerija .slide-frame > img {
+  cursor: zoom-in;
+}
+
+.gallery-lightbox {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  max-width: 100vw;
+  height: 100dvh;
+  max-height: 100dvh;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: rgba(0, 0, 0, 0.96);
+  color: white;
+}
+
+.gallery-lightbox::backdrop {
+  background: rgba(0, 0, 0, 0.96);
+}
+
+.gallery-lightbox-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.gallery-lightbox-content img {
+  display: block;
+  max-width: 90vw;
+  max-height: 85dvh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  user-select: none;
+  touch-action: pan-y;
+  cursor: grab;
+}
+
+.gallery-lightbox-content img:active {
+  cursor: grabbing;
+}
+
+.gallery-lightbox button {
+  position: absolute;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  color: white;
+  cursor: pointer;
+}
+
+.gallery-lightbox button:hover {
+  background: rgba(255, 255, 255, 0.32);
+}
+
+.gallery-lightbox button[hidden] {
+  display: none;
+}
+
+.gallery-lightbox-close {
+  top: 20px;
+  right: 20px;
+  width: 46px;
+  height: 46px;
+  font-size: 32px;
+}
+
+.gallery-lightbox-prev,
+.gallery-lightbox-next {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  font-size: 42px;
+}
+
+.gallery-lightbox-prev {
+  left: 16px;
+}
+
+.gallery-lightbox-next {
+  right: 16px;
+}
+
+.gallery-lightbox-counter {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 15px;
+  color: white;
+}
+
+@media (max-width: 600px) {
+  .gallery-lightbox-content img {
+    max-width: 100vw;
+    max-height: 78dvh;
+  }
+
+  .gallery-lightbox-prev,
+  .gallery-lightbox-next {
+    width: 38px;
+    height: 38px;
+    font-size: 32px;
+  }
+
+  .gallery-lightbox-prev {
+    left: 5px;
+  }
+
+  .gallery-lightbox-next {
+    right: 5px;
+  }
+}
