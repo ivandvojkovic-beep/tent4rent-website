@@ -290,3 +290,143 @@ pokreniSlideshow();
     });
   });
 })();
+
+/* TENT4RENT - VELIKI PRIKAZ GALERIJE */
+(() => {
+  const dialog = document.createElement('dialog');
+  dialog.className = 'gallery-lightbox';
+  dialog.setAttribute('aria-label', 'Veliki prikaz galerije');
+
+  dialog.innerHTML = `
+    <div class="gallery-lightbox-content">
+      <button type="button" class="gallery-lightbox-close"
+        aria-label="Zatvori galeriju">×</button>
+      <button type="button" class="gallery-lightbox-prev"
+        aria-label="Prethodna fotografija">‹</button>
+      <img alt="Fotografija iz galerije" draggable="false">
+      <button type="button" class="gallery-lightbox-next"
+        aria-label="Sljedeća fotografija">›</button>
+      <div class="gallery-lightbox-counter"></div>
+    </div>
+  `;
+
+  document.body.appendChild(dialog);
+
+  const img = dialog.querySelector('img');
+  const counter = dialog.querySelector('.gallery-lightbox-counter');
+  const close = dialog.querySelector('.gallery-lightbox-close');
+  const prev = dialog.querySelector('.gallery-lightbox-prev');
+  const next = dialog.querySelector('.gallery-lightbox-next');
+
+  let images = [];
+  let current = 0;
+  let startX = null;
+
+  function show(index) {
+    if (!images.length) return;
+    current = (index + images.length) % images.length;
+    img.src = images[current];
+    img.alt = `Tent4rent fotografija ${current + 1}`;
+    counter.textContent = `${current + 1} / ${images.length}`;
+    prev.hidden = next.hidden = images.length < 2;
+  }
+
+  function openGallery() {
+    const slideshow = document.querySelector(
+      '#galerija .tent-slideshow'
+    );
+    if (!slideshow || dialog.open) return;
+
+    const sources = [...document.querySelectorAll(
+      '#galerija .slide-dot'
+    )];
+
+    // Fotografije se dohvaćaju iz iste konfiguracije
+    // koju koristi postojeći slideshow.
+    fetch('/data/slideshow.json', { cache: 'no-store' })
+      .then(res => res.ok ? res.json() : null)
+      .then(data => {
+        const valid = path =>
+          typeof path === 'string' &&
+          /^\/assets\/[^?#]+$/.test(path) &&
+          !/[\\"'<>\x00-\x1f]/.test(path) &&
+          !path.split('/').includes('..');
+
+        images = Array.isArray(data?.images)
+          ? data.images.filter(valid)
+          : [];
+
+        // Ako slideshow koristi rezervne fotografije,
+        // učitaj ih iz CMS konfiguracije.
+        if (images.length) return;
+        return fetch('/data/site.json', { cache: 'no-store' })
+          .then(res => res.ok ? res.json() : null)
+          .then(site => {
+            images = [
+              site?.gallery_1,
+              site?.gallery_2,
+              site?.gallery_3
+            ].filter(valid);
+          });
+      })
+      .then(() => {
+        if (!images.length) return;
+        const active = sources.findIndex(dot =>
+          dot.classList.contains('active')
+        );
+        show(active >= 0 ? active : 0);
+        dialog.showModal();
+        close.focus();
+      })
+      .catch(error => console.warn(
+        'Veliki prikaz nije dostupan:', error
+      ));
+  }
+
+  // Otvaranje klikom na fotografiju.
+  document.addEventListener('click', event => {
+    const photo = event.target.closest(
+      '#galerija .slide-frame > img'
+    );
+    if (photo) openGallery();
+  });
+
+  close.addEventListener('click', () => dialog.close());
+  prev.addEventListener('click', () => show(current - 1));
+  next.addEventListener('click', () => show(current + 1));
+
+  dialog.addEventListener('click', event => {
+    if (event.target === dialog) dialog.close();
+  });
+
+  dialog.addEventListener('keydown', event => {
+    if (event.key === 'ArrowLeft') {
+      event.preventDefault();
+      show(current - 1);
+    }
+    if (event.key === 'ArrowRight') {
+      event.preventDefault();
+      show(current + 1);
+    }
+  });
+
+  // Povlačenje prstom ili mišem.
+  img.addEventListener('pointerdown', event => {
+    if (event.pointerType === 'mouse' && event.button !== 0) return;
+    startX = event.clientX;
+  });
+
+  img.addEventListener('pointerup', event => {
+    if (startX === null) return;
+    const distance = event.clientX - startX;
+    startX = null;
+
+    if (Math.abs(distance) > 50) {
+      show(current + (distance < 0 ? 1 : -1));
+    }
+  });
+
+  img.addEventListener('pointercancel', () => {
+    startX = null;
+  });
+})();
